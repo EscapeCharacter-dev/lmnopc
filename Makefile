@@ -1,7 +1,7 @@
-# Makefile for the LLMNOP compiler
+# Makefile for the LMNOP compiler
 CC=tcc # Tiny C Compiler
 LD=tcc # Linker
-TARGET=bin/llmc.exe
+TARGET=bin/lmnc.exe
 
 CFLAGS=-g -c -O2 -I./inc
 
