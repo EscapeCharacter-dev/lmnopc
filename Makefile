@@ -1,21 +1,15 @@
 # Makefile for the LMNOP compiler
-CC=tcc # Tiny C Compiler
-LD=tcc # Linker
+#CC=tcc # Tiny C Compiler
+#LD=tcc # Linker
 TARGET=bin/lmnc	# target (NOT .exe)
 
-CFLAGS=-g -c -O2 -I./include
+CFLAGS=-g -O3
 
 SRCS=$(wildcard src/*.c)
 OBJS=$(patsubst src/%.c, obj/%.o, $(SRCS))
 
-
-
-obj/%.o: src/%.c
-	$(CC) $(CFLAGS) $< -o $@
-	mv *.o obj/
-	
-all: $(OBJS)
-	$(LD) $^ -o $(TARGET)
+bin/lmnc:
+	$(CC) $(CFLAGS) src/main.c -o bin/lmnc
 
 clean:
-	rm -f *.o *.out *.exe main bin/*
+	rm -f bin/*
