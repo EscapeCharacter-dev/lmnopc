@@ -9,6 +9,7 @@ enum {
     LEX_PPLUS,		// ++
     LEX_MMINUS,		// --
     LEX_EQUALS,		// ==
+    LEX_DOTDOTDOT,	// ...
     LEX_NEQUAL,		// !=
     LEX_GREQUAL,	// <=
     LEX_LEEQUAL,	// >=
@@ -62,5 +63,12 @@ enum {
     LEX_STRUCT,		// struct
     LEX_AUTOSTRUCT,	// autostruct
 };
+
+// Opens a new file for the lexer.
+void lex_open(const char *filepath);
+// Closes the input file.
+void lex_close(void);
+// Fetches the next token.
+char lex_next(void);
 
 #endif
