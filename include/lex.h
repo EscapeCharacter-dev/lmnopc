@@ -3,6 +3,7 @@
 
 enum {
     LEX_LINT = 127,	// Integer literal
+    LEX_LFLOAT,		// Float literal
     LEX_LSTR,		// String literal
     LEX_IDENT,		// Identifier
     LEX_PPLUS,		// ++
